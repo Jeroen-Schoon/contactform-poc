@@ -5,7 +5,7 @@
   --background: #e2f2f9;
   --primary: #1a2c5b;
   --secondary: #b8dff0;
-  --tertiairy: #253f83;
+  --tertiary: #253f83;
   --accent: #8ecce7;
 }
 
@@ -14,6 +14,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -25,7 +26,7 @@
     --background: #0f1933;
     --primary: #1a2c5b;
     --secondary: #b8dff0;
-    --tertiairy: #253f83;
+    --tertiary: #253f83;
     --accent: #8ecce7;
   }
 }
