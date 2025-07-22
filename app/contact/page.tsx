@@ -1,9 +1,10 @@
 import React from "react";
+import Form from "../components/form/page";
 
 const ContactPage = () => {
   return (
     <main>
-      <h1>Contact page</h1>
+      <Form />
     </main>
   );
 };

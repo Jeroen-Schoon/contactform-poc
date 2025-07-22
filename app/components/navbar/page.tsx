@@ -8,9 +8,9 @@ const Navbar = () => {
       <div className="text-xl">
         <Link href="/">
           <Image
-            src="/welinkLogoTransparent.png"
-            width={60}
-            height={60}
+            src="/welinkHorizontalLogo.png"
+            width={124}
+            height={100}
             alt="WeLink Logo"
           />
         </Link>
