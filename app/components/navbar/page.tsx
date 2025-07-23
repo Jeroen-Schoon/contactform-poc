@@ -15,7 +15,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="space-x-6 md:flex">
+      <div className="space-x-6 flex">
         <Link href="/contact" className="">
           Contact us!
         </Link>

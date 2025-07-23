@@ -1,6 +1,8 @@
 import React from "react";
+import Label from "@/app/components/label/page";
 
 interface Props {
+  className?: string;
   name?: string;
   label?: string;
   placeholder?: string;
@@ -8,17 +10,26 @@ interface Props {
   required?: boolean;
 }
 
-const Input = ({ type, name, label, placeholder, required }: Props) => {
+const Input = ({
+  className,
+  type,
+  name,
+  label,
+  placeholder,
+  required,
+}: Props) => {
   return (
     <>
-      {name && label && <label htmlFor={name}>{label}</label>}
-      <input
-        className="border-1"
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        required={required}
-      />
+      <div className={className}>
+        {name && label && <Label text={label} htmlFor={name} />}
+        <input
+          className="border-1 border-[var(--primary)] p-1"
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          required={required}
+        />
+      </div>
     </>
   );
 };

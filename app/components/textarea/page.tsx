@@ -1,6 +1,8 @@
 import React from "react";
+import Label from "@/app/components/label/page";
 
 interface Props {
+  className?: string;
   name?: string;
   label?: string;
   cols?: number;
@@ -9,16 +11,26 @@ interface Props {
   required?: boolean;
 }
 
-const TextArea = ({ name, label, cols, rows, placeholder }: Props) => {
+const TextArea = ({
+  className,
+  name,
+  label,
+  cols,
+  rows,
+  placeholder,
+}: Props) => {
   return (
     <>
-      {name && label && <label htmlFor={name}>{label}</label>}
-      <textarea
-        name={name}
-        placeholder={placeholder}
-        cols={cols}
-        rows={rows}
-      ></textarea>
+      <div className={className}>
+        {name && label && <Label text={label} htmlFor={name} />}
+        <textarea
+          className="border-1 border-[var(--primary)] p-1"
+          name={name}
+          placeholder={placeholder}
+          cols={cols}
+          rows={rows}
+        ></textarea>
+      </div>
     </>
   );
 };
