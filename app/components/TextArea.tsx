@@ -1,5 +1,5 @@
 import React from "react";
-import Label from "@/app/components/label/page";
+import Label from "@/app/components/Label";
 
 interface Props {
   className?: string;
