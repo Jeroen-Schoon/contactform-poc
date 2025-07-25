@@ -24,19 +24,19 @@ const HamburgerMenu = ({ menuItems }: Props) => {
         className="flex flex-col justify-center items-center"
       >
         <span
-          className={`bg-[var(--secondary)] block transition-all duration-400 ease-out
+          className={`bg-secondary block transition-all duration-400 ease-out
             h-1.5 w-8 rounded-sm ${
               isOpen ? "rotate-45 translate-y-2" : "-translate-y-0.5"
             }`}
         ></span>
         <span
-          className={`bg-[var(--secondary)] block transition-all duration-200 ease-out
+          className={`bg-secondary block transition-all duration-200 ease-out
             h-1.5 w-8 rounded-sm my-0.5 ${
               isOpen ? "opacity-0" : "opacity-100"
             }`}
         ></span>
         <span
-          className={`bg-[var(--secondary)] block transition-all duration-400 ease-out
+          className={`bg-secondary block transition-all duration-400 ease-out
             h-1.5 w-8 rounded-sm ${
               isOpen ? "-rotate-45 -translate-y-2" : "translate-y-0.5"
             }`}
@@ -49,7 +49,7 @@ const HamburgerMenu = ({ menuItems }: Props) => {
               key={item.href}
               onClick={handleClick}
               href={item.href}
-              className={`border-x-2 border-y-1 bg-secondary text-primary p-1.5 ${
+              className={`border-x-2 border-y-1 bg-secondary text-primary hover:bg-tertiary hover:text-secondary p-1.5 ${
                 index === 0 ? "rounded-t-md border-t-2" : ""
               } ${
                 index === menuItems.length - 1

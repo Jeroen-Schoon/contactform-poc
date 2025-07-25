@@ -5,7 +5,7 @@ import TextArea from "../components/TextArea";
 const ContactPage = () => {
   return (
     <main>
-      <form className="flex justify-center flex-col p-6 space-y-4 bg-[var(--secondary)] text-[var(--primary)] border-2 border-[var(--primary)] rounded-md shadow-black shadow-2xl">
+      <form className="flex justify-center flex-col p-6 space-y-4 bg-secondary text-primary border-2 border-primary rounded-md shadow-black shadow-2xl">
         <div className="flex flex-col justify-center items-center pb-4">
           <h1 className="font-extrabold">Want us to contact you?</h1>
           <h2>Fill in and submit this form so we can reach you!</h2>
@@ -47,7 +47,7 @@ const ContactPage = () => {
         </div>
         <button
           type="submit"
-          className="border-2 border-primary rounded-md p-2 bg-[var(--tertiary)] text-accent hover:bg-[var(--primary)] hover:text-[var(--accent)] focus:border-[var(--primary)]"
+          className="border-2 border-primary rounded-md p-2 bg-tertiary text-secondary hover:bg-primary focus:border-accent"
         >
           Submit
         </button>
