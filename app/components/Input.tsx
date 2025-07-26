@@ -8,6 +8,8 @@ interface Props {
   placeholder?: string;
   type?: string;
   required?: boolean;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
@@ -17,6 +19,8 @@ const Input = ({
   label,
   placeholder,
   required,
+  value,
+  onChange,
 }: Props) => {
   return (
     <div className={className}>
@@ -27,6 +31,8 @@ const Input = ({
         name={name}
         placeholder={placeholder}
         required={required}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

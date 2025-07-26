@@ -7,7 +7,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
   return (
-    <nav className="w-full px-8 py-3 space-x-4 flex items-center justify-between bg-primary text-secondary">
+    <nav className="sticky top-0 w-full px-8 py-3 space-x-4 flex items-center justify-between bg-primary text-secondary">
       <div className="text-xl">
         <Link href="/">
           <Image
