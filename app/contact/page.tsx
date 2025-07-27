@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Input from "../components/Input";
-import TextArea from "../components/TextArea";
 import { useState } from "react";
+import FormField from "../components/FormField";
 
 const ContactPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -36,7 +35,7 @@ const ContactPage = () => {
           <h2>Fill in and submit this form so we can reach you!</h2>
         </div>
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4">
-          <Input
+          <FormField
             className="flex flex-col"
             name="first"
             label="First name"
@@ -45,7 +44,7 @@ const ContactPage = () => {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
-          <Input
+          <FormField
             className="flex flex-col"
             name="last"
             label="Last name"
@@ -56,7 +55,7 @@ const ContactPage = () => {
           />
         </div>
         <div className="flex flex-col space-y-4">
-          <Input
+          <FormField
             className="flex flex-col"
             name="email"
             type="email"
@@ -66,8 +65,9 @@ const ContactPage = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <TextArea
+          <FormField
             className="flex flex-col"
+            isTextArea={true}
             label="Your message"
             name="message"
             placeholder="message..."
