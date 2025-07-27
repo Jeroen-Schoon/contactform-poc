@@ -12,19 +12,53 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch(
-      "https://ixmknes7znga4lhkzzw2nnlxui0ckdkd.lambda-url.eu-west-1.on.aws/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ firstName, lastName, email, message }),
-      }
-    );
+    if (!firstName || !lastName || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
-    const data = await res.json();
-    console.log("Server response:", data);
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    /**
+     * ^            => Start of the string
+     * [^\s@]+      => One or more characters that are NOT whitespace (\s) or @
+     * @            => The "@" symbol must be present
+     * [^\s@]+      => One or more characters that are NOT whitespace or @ (the domain)
+     * \.           => A dot "." to separate domain and top-level domain
+     * [^\s@]+      => One or more characters that are NOT whitespace or @ (the top-level domain)
+     * $            => End of the string
+     */
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        "https://ixmknes7znga4lhkzzw2nnlxui0ckdkd.lambda-url.eu-west-1.on.aws/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ firstName, lastName, email, message }),
+        }
+      );
+
+      const data = await res.json();
+      console.log("Server response:", data);
+
+      // Reset form after succesful POST.
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
