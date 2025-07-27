@@ -25,10 +25,10 @@ const FormField = ({
   required,
   value,
   type = "text",
-  onChange,
   isTextArea = false,
   cols,
   rows,
+  onChange,
 }: Props) => {
   return (
     <div className={className}>
@@ -42,6 +42,7 @@ const FormField = ({
           rows={rows}
           value={value}
           onChange={onChange}
+          required={required}
         />
       ) : (
         <input
@@ -49,9 +50,9 @@ const FormField = ({
           type={type}
           name={name}
           placeholder={placeholder}
-          required={required}
           value={value}
           onChange={onChange}
+          required={required}
         />
       )}
     </div>

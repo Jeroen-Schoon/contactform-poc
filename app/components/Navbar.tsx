@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HamburgerMenu from "./HamburgerMenu";
@@ -25,7 +24,10 @@ const Navbar = () => {
             { title: "Contact", href: "/contact" },
           ]}
         />
-        <Link href="/contact" className="max-sm:hidden">
+        <Link
+          href="/contact"
+          className="max-sm:hidden p-1 rounded-2xl hover:bg-secondary hover:text-primary hover:border-1.5"
+        >
           Contact us!
         </Link>
       </div>

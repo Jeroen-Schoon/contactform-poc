@@ -43,7 +43,6 @@ export const handler = async (
     };
   }
 
-  // Simuleer verzenden (bv. via e-mailservice)
   console.log('Contactform received:', data);
 
   return {
