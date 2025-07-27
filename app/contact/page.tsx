@@ -36,7 +36,7 @@ const ContactPage = () => {
 
     try {
       const res = await fetch(
-        "https://ixmknes7znga4lhkzzw2nnlxui0ckdkd.lambda-url.eu-west-1.on.aws/contact",
+        "https://jpx553hhgblinfwz27pjn7up7y0gatlm.lambda-url.eu-west-1.on.aws/",
         {
           method: "POST",
           headers: {
@@ -49,7 +49,6 @@ const ContactPage = () => {
       const data = await res.json();
       console.log("Server response:", data);
 
-      // Reset form after succesful POST.
       setFirstName("");
       setLastName("");
       setEmail("");
@@ -63,7 +62,10 @@ const ContactPage = () => {
 
   return (
     <main>
-      <form className="flex justify-center flex-col p-6 space-y-4 bg-secondary text-primary border-2 border-primary rounded-md shadow-black shadow-2xl">
+      <form
+        className="flex justify-center flex-col p-6 space-y-4 bg-secondary text-primary border-2 border-primary rounded-md shadow-black shadow-2xl"
+        onSubmit={handleSubmit}
+      >
         <div className="flex flex-col justify-center items-center pb-4">
           <h1 className="text-2xl font-extrabold">Want us to contact you?</h1>
           <h2 className="text-1xl">
@@ -114,7 +116,6 @@ const ContactPage = () => {
           />
         </div>
         <button
-          onClick={handleSubmit}
           type="submit"
           className="border-2 border-primary rounded-md p-2 bg-tertiary text-secondary hover:bg-primary focus:border-accent"
         >
